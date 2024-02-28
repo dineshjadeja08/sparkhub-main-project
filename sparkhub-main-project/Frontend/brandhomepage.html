@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Home Page</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #343a40;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .welcome-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .brand-content {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .brand-content h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .filter-section {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .filter-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .filter-label {
+            margin-right: 10px;
+            color: #555;
+        }
+
+        .filter-input {
+            width: 150px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .influencer-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .influencer-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .influencer-item:hover {
+            transform: scale(1.02);
+        }
+
+        .influencer-details {
+            flex-grow: 1;
+        }
+
+        .influencer-details h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .influencer-details p {
+            color: #555;
+            margin: 0;
+        }
+
+        .contact-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Your Brand</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Campaigns</a>
+    <a href="#">Analytics</a>
+    <a href="#">Logout</a>
+</nav>
+
+<div class="welcome-section">
+    <h2>Welcome, [Brand Name]!</h2>
+    <p>Explore and manage your brand's presence with ease.</p>
+</div>
+
+<div class="brand-content">
+    <h2>Your Brand Content</h2>
+    <!-- Add content specific to your brand here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+</div>
+
+<div class="filter-section">
+    <h2>Filter Influencers</h2>
+    <label class="filter-label">Minimum Subscribers:</label>
+    <input type="number" class="filter-input" id="minSubscribers" min="0">
+    <label class="filter-label">Content Niche:</label>
+    <input type="text" class="filter-input" id="contentNiche">
+</div>
+
+<div class="brand-content">
+    <h2>Filtered Influencer List</h2>
+    <ul class="influencer-list">
+        <li class="influencer-item">
+            <div class="influencer-details">
+                <h3>Influencer Name 1</h3>
+                <p>Subscribers: 100,000 | Niche: Fashion</p>
+            </div>
+            <button class="contact-button" onclick="contactInfluencer('Influencer Name 1')">Contact</button>
+        </li>
+        <li class="influencer-item">
+            <div class="influencer-details">
+                <h3>Influencer Name 2</h3>
+                <p>Subscribers: 150,000 | Niche: Beauty</p>
+            </div>
+            <button class="contact-button" onclick="contactInfluencer('Influencer Name 2')">Contact</button>
+        </li>
+        <!-- Add more influencer items as needed -->
+    </ul>
+</div>
+
+<script>
+    function contactInfluencer(influencerName) {
+        // Add logic to contact the selected influencer
+        alert('Contacting ' + influencerName);
+    }
+</script>
+
+</body>
+</html>

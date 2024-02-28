@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-image: url('background.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            backdrop-filter: blur(55px); /* Adjust the blur intensity as needed */
+        }
+
+        .card {
+            width: 400px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.9); /* Adjust the background opacity as needed */
+        }
+
+        .card-header {
+            background-color: #4fa3f8;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .google-signin-btn {
+            background-color: #333539;
+            color: #fff;
+            border: 1px solid #4285f4;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .google-signin-btn img {
+            width: 20px;
+            margin-right: 10px;
+        }
+
+        .google-signin-btn:hover {
+            background-color: #3b79c4;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+    </style>
+
+    <!-- Include the Google Sign-In script -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">
+        <h2>Login/Sign Up</h2>
+    </div>
+    
+    <!-- Brand Sign-In Section -->
+    <div class="card-body">
+        <h3>Brand</h3>
+        <!-- Google Sign-In button for brands -->
+        <div class="g-signin2 google-signin-btn" data-onsuccess="onBrandSignIn">
+            <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo">
+            Sign in with Google
+        </div>
+    </div>
+
+    <!-- Influencer Sign-In Section -->
+    <div class="card-body">
+        <h3>Influencer</h3>
+        <!-- Google Sign-In button for influencers -->
+        <div class="g-signin2 google-signin-btn" data-onsuccess="onInfluencerSignIn">
+            <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo">
+            Sign in with Google
+        </div>
+    </div>
+</div>
+
+<script>
+    // Function called when a brand signs in successfully
+    function onBrandSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        // Log brand details to console (customize as needed)
+        console.log('Brand ID: ' + profile.getId());
+        console.log('Brand Name: ' + profile.getName());
+        console.log('Brand Email: ' + profile.getEmail());
+        // Add custom logic for brand interface
+        // Redirect or perform additional actions specific to brands
+    }
+
+    // Function called when an influencer signs in successfully
+    function onInfluencerSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        // Log influencer details to console (customize as needed)
+        console.log('Influencer ID: ' + profile.getId());
+        console.log('Influencer Name: ' + profile.getName());
+        console.log('Influencer Email: ' + profile.getEmail());
+        // Add custom logic for influencer interface
+        // Redirect or perform additional actions specific to influencers
+    }
+
+    // Initialize the Google Sign-In API with your client ID
+    gapi.load('auth2', function() {
+        gapi.auth2.init({
+            client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+        });
+    });
+</script>
+
+</body>
+</html>

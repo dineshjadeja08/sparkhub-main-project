@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Influencer Home Page</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-color: #343a40;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .welcome-section {
+            padding: 50px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .influencer-content {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .influencer-content h2 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .brand-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .brand-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-item:hover {
+            transform: scale(1.02);
+        }
+
+        .brand-details {
+            flex-grow: 1;
+        }
+
+        .brand-details h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+        .brand-details p {
+            color: #555;
+            margin: 0;
+        }
+
+        .contact-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #218838;
+        }
+
+        .filter-section {
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+        }
+
+        .filter-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .filter-label {
+            margin-right: 10px;
+            color: #555;
+        }
+
+        .filter-input {
+            width: 150px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .filter-select {
+            width: 150px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .filter-button {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Influencer Hub</h1>
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Profile</a>
+    <a href="#">Campaigns</a>
+    <a href="#">Analytics</a>
+    <a href="#">Logout</a>
+</nav>
+
+<div class="welcome-section">
+    <h2>Welcome, [Influencer Name]!</h2>
+    <p>Explore and collaborate with various brands.</p>
+</div>
+
+<div class="influencer-content">
+    <h2>Your Brand Collaborations</h2>
+    <!-- Add content specific to the influencer here -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit....</p>
+</div>
+
+<div class="filter-section">
+    <h2>Filter Brands</h2>
+    <label class="filter-label">Category:</label>
+    <select class="filter-select" id="brandCategory">
+        <option value="all">All Categories</option>
+        <option value="fashion">Fashion</option>
+        <option value="beauty">Beauty</option>
+        <!-- Add more categories as needed -->
+    </select>
+    <label class="filter-label">Minimum Subscribers:</label>
+    <input type="number" class="filter-input" id="minSubscribers" min="0">
+    <label class="filter-label">Niche:</label>
+    <input type="text" class="filter-input" id="brandNiche">
+    <button class="filter-button" onclick="applyFilters()">Apply Filters</button>
+</div>
+
+<div class="influencer-content">
+    <h2>Filtered Brand List</h2>
+    <ul class="brand-list">
+        <li class="brand-item">
+            <div class="brand-details">
+                <h3>Brand Name 1</h3>
+                <p>Category: Fashion | Subscribers: 500,000</p>
+            </div>
+            <button class="contact-button" onclick="contactBrand('Brand Name 1')">Contact</button>
+        </li>
+        <li class="brand-item">
+            <div class="brand-details">
+                <h3>Brand Name 2</h3>
+                <p>Category: Beauty | Subscribers: 300,000</p>
+            </div>
+            <button class="contact-button" onclick="contactBrand('Brand Name 2')">Contact</button>
+        </li>
+        <!-- Add more brand items as needed -->
+    </ul>
+</div>
+
+<script>
+    function contactBrand(brandName) {
+        // Add logic to contact the selected brand
+        alert('Contacting ' + brandName);
+    }
+
+    function applyFilters() {
+        // Add logic to filter the brand list based on selected filters
+        alert('Applying Filters');
+    }
+</script>
+
+</body>
+</html>
